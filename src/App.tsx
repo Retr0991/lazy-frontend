@@ -1,26 +1,19 @@
 import { useState } from "react";
-// import { invoke } from "@tauri-apps/api/core";
 import "@/App.css";
 import { HeroSection } from "@/components/HeroSection";
 import { Header } from "@/components/Header";
 import { WavyBackground } from "@/components/ui/wavy-background";
-import { Spotlight } from "@/components/ui/spotlight-new";
+import { Toaster } from "@/components/ui/sonner";
 
 function App() {
   // const [greetMsg, setGreetMsg] = useState("");
   // const [name, setName] = useState("");
   const [openSettings, setOpenSettings] = useState<boolean>(false);
 
-  // async function greet() {
-  //   // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-  //   setGreetMsg(await invoke("greet", { name }));
-  // }
-
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen w-full overflow-hidden bg-black">
       <div className="absolute inset-0">
         <WavyBackground className="max-w-2xl mx-auto pb-40" />
-        <Spotlight />
       </div>
 
       <div className="relative flex flex-col h-full z-20">
@@ -32,6 +25,7 @@ function App() {
           <HeroSection />
         </div>
       </div>
+      <Toaster />
     </div>
   );
 }
